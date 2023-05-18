@@ -1,4 +1,4 @@
 # Getting Started
 
 ```
-docker run -p 4000:4000 ghcr.io/krstic-duci/cra-cicd-101:latest
+docker run -p 3000:3000 ghcr.io/krstic-duci/cra-cicd-101:latest
