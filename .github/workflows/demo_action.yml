@@ -18,15 +18,15 @@ jobs:
       - run: npm ci --if-present
       - run: npm run build --if-present
       - run: npm test
-  # build_docker_image:
-  #   runs-on: "ubuntu-20.04"
-  #   needs: [test]
+  build_docker_image:
+    runs-on: "ubuntu-20.04"
+    needs: [test]
 
-  #   steps:
-  #     - uses: actions/checkout@v2
+    steps:
+      - uses: actions/checkout@v2
 
-  #     - name: Build and publish a Docker image for ${{ github.repository }}
-  #       uses: macbre/push-to-ghcr@master
-  #       with:
-  #         image_name: ${{ github.repository }}
-  #         github_token: ${{ secrets.GH_TOKEN }}
+      - name: Build and publish a Docker image for ${{ github.repository }}
+        uses: macbre/push-to-ghcr@master
+        with:
+          image_name: ${{ github.repository }}
+          github_token: ${{ secrets.GH_TOKEN }}
